@@ -237,12 +237,12 @@ var schemaExamples = []schemaExample{
 			NewObjectSchema().WithRequired([]string{"boolProp"}),
 		).WithProperties(map[string]*Schema{
 			"stringProp": NewStringSchema().WithMaxLength(18),
-			"boolProp": NewBoolSchema(),
+			"boolProp":   NewBoolSchema(),
 		}),
 		Serialization: map[string]interface{}{
 			"properties": map[string]interface{}{
 				"stringProp": map[string]interface{}{"type": "string", "maxLength": 18},
-				"boolProp": map[string]interface{}{"type": "boolean"},
+				"boolProp":   map[string]interface{}{"type": "boolean"},
 			},
 			"anyOf": []interface{}{
 				map[string]interface{}{"type": "object", "required": []string{"stringProp"}},
